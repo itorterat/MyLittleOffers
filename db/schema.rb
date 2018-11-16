@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_164552) do
+ActiveRecord::Schema.define(version: 2018_11_16_102322) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 2018_11_15_164552) do
   end
 
   create_table "offers_tables", force: :cascade do |t|
+  end
+
+  create_table "translations", force: :cascade do |t|
+    t.string "locale"
+    t.string "key"
+    t.text "value"
+    t.text "interpolations"
+    t.boolean "is_proc", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

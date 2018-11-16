@@ -1,0 +1,17 @@
+en:
+  offers:
+    index:
+      title_page: List of offers
+      list_offers: List of offers
+      no_offer: No offer available at this moment...
+      number_offer: Offer n°
+      title_offer: 'Title:'
+      state_offer: 'State:'
+
+    show:
+      title_page: zuzu
+      list_offers: List of offers
+      no_offer: No offer available at this moment...
+      number_offer: Offer n°
+      title_offer: 'Title:'
+      state_offer: 'State:'

@@ -13,8 +13,8 @@ class OffersController < ApplicationController
     @comments = Comment.all
     @comment = Comment.new
     @offer = current_user.offers.new(offer_params)
-    if @offer.save!
-      flash[:info] = "L'annonce a bien été créée."
+    if @offer.save
+      flash[:info] = "Offer has been created!"
       redirect_to offers_path(current_user)
     else
       render :new
@@ -32,7 +32,8 @@ class OffersController < ApplicationController
   end
 
   def update
-
+    Offer.update(state: "published")
+    redirect_to offers_path(current_user)
   end
 
   def destroy

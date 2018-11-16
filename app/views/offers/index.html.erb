@@ -1,4 +1,6 @@
-<% content_for :title, "MLO - List of offers" %>
+<% content_for :title do %>
+  <%= t('.title_page') %>
+<% end %>
 
 <h1>List of offers</h1>
 <% if Offer.all.where(state: "published").empty? and current_user.try(:role) != "admin" %>
@@ -8,8 +10,8 @@
     <% if offer.state == "published" or current_user.try(:role) == "admin" %>
       <div>
         <a href= "/offers/<%= offer.id.to_s %>">Offer n°<%= offer.id.to_s %></a><br><br>
-        Title: <%= offer.title %><br><br>
-        State: <%= offer.state %><br><br>
+        <%= t('.title_offer') %> <%= offer.title %><br><br>
+        <%= t('.state_offer') %> <%= offer.state %><br><br>
       </div> <br>
     <% end %>
   <% end %>

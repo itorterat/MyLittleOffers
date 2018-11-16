@@ -26,12 +26,12 @@ State: <%= @offer.state %><br><br>
 <h1>Post a comment</h1>
 
 <%= form_for @comment, url: offer_comments_path(offer_id: @offer.id) do |f| %>
-  <%= f.label :content, 'Contenu :' %><br />
+  <%= f.label :content, 'Content:' %><br />
   <%= f.text_field :content %>
   <%= @comment.errors[:content].first %><br /><br />
 
-  <%= f.submit "Poster le commentaire" %>
+  <%= f.submit "Post a comment" %>
 <% end %>
 <br /><br />
 
-<%= link_to "Liste des annonces", offers_path %>
+<%= link_to "List of offers", offers_path %>

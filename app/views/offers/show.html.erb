@@ -1,0 +1,37 @@
+<% content_for :title, "MLO - #{ @offer.title }" %>
+
+Offer n°<%= @offer.id.to_s %><br><br>
+Publisher: <%= @offer.user.name %><br><br>
+Title: <%= @offer.title %><br><br>
+Description: <%= simple_format(@offer.content) %>
+Price: <%= @offer.price.to_s %><br><br>
+State: <%= @offer.state %><br><br>
+
+<% if current_user.role == "admin" and @offer.state == "waiting" %>
+  <%= form_tag offers_path, method: :patch do %>
+  <input type="submit" value="Validate offer" />
+  <% end %><br><br>
+<% end %>
+
+<h1>Comments section:</h1>
+<% @comments.where(offer_id: @offer.id).each_with_index do |comment, index| %>
+  <div>
+    Comment #<%= index + 1 %><br><br>
+    Commenter: <%= comment.user.name %><br><br>
+    Content: <%= simple_format(comment.content) %>
+  </div> <br>
+<% end %>
+
+
+<h1>Post a comment</h1>
+
+<%= form_for @comment, url: offer_comments_path(offer_id: @offer.id) do |f| %>
+  <%= f.label :content, 'Contenu :' %><br />
+  <%= f.text_field :content %>
+  <%= @comment.errors[:content].first %><br /><br />
+
+  <%= f.submit "Poster le commentaire" %>
+<% end %>
+<br /><br />
+
+<%= link_to "Liste des annonces", offers_path %>

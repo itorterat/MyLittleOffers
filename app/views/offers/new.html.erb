@@ -1,0 +1,24 @@
+<% content_for :title, "MLO - Post an offer" %>
+
+<h1>Post an offer</h1>
+
+<%= form_for @offer do |f| %>
+  <%= f.label :title, 'Title:' %><br />
+  <%= f.text_field :title %>
+  <%= @offer.errors[:title].first %><br /><br />
+
+  <%= f.label :content, 'Description:' %><br />
+  <%= f.text_area :content, :cols => "20", :rows => "10" %>
+  <%= @offer.errors[:content].first %><br /><br />
+
+  <%= f.label :price, 'Price:' %><br />
+  <%= f.number_field :price %>
+  <%= @offer.errors[:price].first %><br /><br />
+
+  <%= f.submit "Post an offer" %>
+<% end %>
+
+
+<br /><br />
+
+<%= link_to "List of offers", offers_path %>

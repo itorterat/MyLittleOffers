@@ -2,14 +2,14 @@
   <%= t('.title_page') %>
 <% end %>
 
-<h1>List of offers</h1>
+<h1><%= t('.list_offers') %></h1>
 <% if Offer.all.where(state: "published").empty? and current_user.try(:role) != "admin" %>
-  <p> No offer available at this moment ... </p>
+  <p><%= t('.no_offer') %></p>
 <% else %>
   <% @offers.each do |offer| %>
     <% if offer.state == "published" or current_user.try(:role) == "admin" %>
       <div>
-        <a href= "/offers/<%= offer.id.to_s %>">Offer n°<%= offer.id.to_s %></a><br><br>
+        <a href= "/offers/<%= offer.id.to_s %>"><%= t('.number_offer') %><%= offer.id.to_s %></a><br><br>
         <%= t('.title_offer') %> <%= offer.title %><br><br>
         <%= t('.state_offer') %> <%= offer.state %><br><br>
       </div> <br>

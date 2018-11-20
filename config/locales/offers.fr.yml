@@ -1,0 +1,43 @@
+fr:
+  offers:
+    create:
+      success_offer: L'annonce a été soumise !
+
+    index:
+      title_page: Liste des annonces
+      list_offers: Liste des annonces
+      no_offer: Pas d'annonce disponible pour le moment ...
+      number_offer: 'Annonce #'
+      title_offer: 'Titre : '
+      state_offer: 'Statut : '
+
+    new:
+      title_page: Publier une annonce
+      post_offer: Publier une annonce
+      title_offer: 'Titre : '
+      description_offer: 'Description : '
+      price_offer: 'Prix : '
+      submit_offer: Soumettre l'annonce
+      list_offers: Liste des annonces
+
+    show:
+      title_page: "%{title_offer}"
+      number_offer: 'Annonce #'
+      seller_offer: 'Vendeur : '
+      title_offer: 'Titre : '
+      description_offer: 'Description : '
+      price_offer: 'Prix : '
+      state_offer: 'Statut : '
+      validate_offer: Valider l'annonce
+      comments_section: Espace commentaire
+      number_comment: 'Commentaire #'
+      author_comment: 'Auteur : '
+      content_comment: 'Contenu : '
+      post_comment: Poster un commentaire
+      submit_comment: Publier le commentaire
+      list_offers: Liste des annonces
+
+    comments:
+      create:
+        success_comment: Le commentaire a été posté !
+        error_comment: Le contenu du commentaire ne peut pas être vide.

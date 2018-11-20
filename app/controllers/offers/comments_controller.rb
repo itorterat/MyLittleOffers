@@ -6,10 +6,9 @@ module Offers
       new_comment_params = comment_params.merge(user_id: current_user.id).merge(offer_id: @current_offer.id)
       @comment = Comment.new(new_comment_params)
       if @comment.save
-        flash[:info] = "Comment has been posted."
-        redirect_to offers_path(current_user, current_offer: @current_offer)
+        redirect_to offer_path(@current_offer.id), notice: t('.success_comment')
       else
-        redirect_to offer_path(@current_offer.id), alert: "Insufficient rights!"
+        redirect_to offer_path(@current_offer.id), alert: t('.error_comment')
       end
     end
 

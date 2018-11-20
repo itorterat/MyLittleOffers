@@ -26,9 +26,6 @@ ActiveRecord::Schema.define(version: 2018_11_16_102322) do
     t.integer "user_id"
   end
 
-  create_table "offers_tables", force: :cascade do |t|
-  end
-
   create_table "translations", force: :cascade do |t|
     t.string "locale"
     t.string "key"

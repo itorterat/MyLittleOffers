@@ -14,10 +14,9 @@ class OffersController < ApplicationController
     @comment = Comment.new
     @offer = current_user.offers.new(offer_params)
     if @offer.save
-      flash[:info] = "Offer has been created!"
-      redirect_to offers_path(current_user)
+      redirect_to offers_path, notice: t('.success_offer')
     else
-      render :new
+      redirect_to offers_path, alert: t('.error_offer')
     end
   end
 

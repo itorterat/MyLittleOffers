@@ -1,37 +1,44 @@
-<% content_for :title, "MLO - #{ @offer.title }" %>
+<% content_for :title do %>
+  <%= t('.title_page', title_offer: @offer.title) %>
+<% end %>
 
-Offer n°<%= @offer.id.to_s %><br><br>
-Publisher: <%= @offer.user.name %><br><br>
-Title: <%= @offer.title %><br><br>
-Description: <%= simple_format(@offer.content) %>
-Price: <%= @offer.price.to_s %><br><br>
-State: <%= @offer.state %><br><br>
+<%= t('.number_offer') %><%= @offer.id.to_s %><br><br>
+<%= t('.seller_offer') %><%= @offer.user.name %><br><br>
+<%= t('.title_offer') %><%= @offer.title %><br><br>
+<%= t('.description_offer') %><%= simple_format(@offer.content) %>
+<%= t('.price_offer') %><%= @offer.price.to_s %><br><br>
+<%= t('.state_offer') %><%= @offer.state %><br><br>
 
 <% if current_user.role == "admin" and @offer.state == "waiting" %>
   <%= form_tag offers_path, method: :patch do %>
-  <input type="submit" value="Validate offer" />
+  <div class="actions">
+    <input type="submit" value= <%= t('.validate_offer') %> />
+  </div>
   <% end %><br><br>
 <% end %>
 
-<h1>Comments section:</h1>
+<h1><%= t('.comments_section') %></h1>
 <% @comments.where(offer_id: @offer.id).each_with_index do |comment, index| %>
   <div>
-    Comment #<%= index + 1 %><br><br>
-    Commenter: <%= comment.user.name %><br><br>
-    Content: <%= simple_format(comment.content) %>
+    <%= t('.number_comment') %><%= index + 1 %><br><br>
+    <%= t('.author_comment') %><%= comment.user.name %><br><br>
+    <%= t('.content_comment') %><%= simple_format(comment.content) %>
   </div> <br>
 <% end %>
 
 
-<h1>Post a comment</h1>
+<h1><%= t('.post_comment') %></h1>
 
 <%= form_for @comment, url: offer_comments_path(offer_id: @offer.id) do |f| %>
-  <%= f.label :content, 'Content:' %><br />
-  <%= f.text_field :content %>
-  <%= @comment.errors[:content].first %><br /><br />
-
-  <%= f.submit "Post a comment" %>
+  <div class="field">
+    <%= f.label :content, t('.content_comment') %><br />
+    <%= f.text_area :content, :cols => "40", :rows => "5" %>
+    <%= @comment.errors[:content].first %><br /><br />
+  </div>
+  <div class="actions">
+    <%= f.submit t('.submit_comment') %>
+  </div>
 <% end %>
 <br /><br />
 
-<%= link_to "List of offers", offers_path %>
+<%= link_to t('.list_offers'), offers_path %>

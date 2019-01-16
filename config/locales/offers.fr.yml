@@ -1,4 +1,13 @@
 fr:
+  layouts:
+    application:
+      list_offers: Liste des annonces
+      post_offer: Publier une annonce
+      edit_profile: Editer profil
+      logout: Se déconnecter
+      signup: S'enregistrer
+      login: Se connecter
+
   offers:
     create:
       success_offer: L'annonce a été soumise !

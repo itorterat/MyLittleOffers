@@ -7,6 +7,5 @@ Rails.application.routes.draw do
   resources :offers, only: %i[index new show create update] do
     resources :comments, only: %i[create show], module: 'offers'
   end
-  patch '/offers' => 'offers#update'
 
 end

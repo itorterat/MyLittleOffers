@@ -1,7 +1,17 @@
 en:
+  layouts:
+    application:
+      list_offers: List of offers
+      post_offer: Post an offer
+      edit_profile: Edit profile
+      logout: Logout
+      signup: Sign up
+      login: Login
+
   offers:
     create:
       success_offer: Offer has been submitted!
+      error_offer: Offer has not been submitted!
 
     index:
       title_page: List of offers

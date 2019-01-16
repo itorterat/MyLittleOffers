@@ -65,3 +65,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'i18n-active_record', :require => 'i18n/active_record'
+
+gem 'bootstrap', '~> 4.0.0'
+
+gem 'jquery-rails'

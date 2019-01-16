@@ -31,8 +31,8 @@ class OffersController < ApplicationController
   end
 
   def update
-    Offer.update(state: "published")
-    redirect_to offers_path(current_user)
+    Offer.find(params[:id]).update(state: "published")
+    redirect_to offers_path
   end
 
   def destroy

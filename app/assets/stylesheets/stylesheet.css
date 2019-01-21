@@ -3,7 +3,7 @@
 }
 
 .card {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .list-group-item-secondary {
@@ -17,4 +17,8 @@
 
 .list-group {
   margin-bottom: 1em;
+}
+
+.list-group-item:focus, .list-group-item:hover {
+  z-index: 0;
 }

@@ -11,6 +11,7 @@ fr:
   offers:
     create:
       success_offer: L'annonce a été soumise !
+      error_offer: L'annonce n'a pas été soumise !
 
     index:
       title_page: Liste des annonces
@@ -31,6 +32,7 @@ fr:
 
     show:
       title_page: "%{title_offer}"
+      offer_section: 'Offer'
       number_offer: 'Annonce #'
       seller_offer: 'Vendeur : '
       title_offer: 'Titre : '

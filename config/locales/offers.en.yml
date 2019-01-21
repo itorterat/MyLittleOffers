@@ -1,53 +1,57 @@
 en:
   layouts:
     application:
-      list_offers: List of offers
-      post_offer: Post an offer
-      edit_profile: Edit profile
-      logout: Logout
-      signup: Sign up
-      login: Login
+      list_offers: 'List of offers'
+      post_offer: 'Post an offer'
+      edit_profile: 'Edit profile'
+      logout: 'Logout'
+      signup: 'Sign up'
+      login: 'Login'
 
   offers:
     create:
-      success_offer: Offer has been submitted!
-      error_offer: Offer has not been submitted!
+      success_offer: 'Offer has been submitted!'
+      error_offer: 'Offer has not been submitted!'
 
     index:
-      title_page: List of offers
-      list_offers: List of offers
-      no_offer: No offer available at this moment...
-      number_offer: 'Offer #'
-      title_offer: 'Title: '
-      state_offer: 'State: '
-
-    new:
-      title_page: Post an offer
-      post_offer: Post an offer
-      title_offer: 'Title: '
-      description_offer: 'Description: '
-      price_offer: 'Price: '
-      submit_offer: Submit offer
-      list_offers: List of offers
-
-    show:
-      title_page: "%{title_offer}"
+      title_page: 'List of offers'
+      list_offers: 'List of offers'
+      no_offer: 'No offer available at this moment...'
       number_offer: 'Offer #'
       seller_offer: 'Seller: '
       title_offer: 'Title: '
       description_offer: 'Description: '
       price_offer: 'Price: '
       state_offer: 'State: '
-      validate_offer: Validate offer
-      comments_section: Comments section
+
+    new:
+      title_page: 'Post an offer'
+      post_offer: 'Post an offer'
+      title_offer: 'Title: '
+      description_offer: 'Description: '
+      price_offer: 'Price: '
+      submit_offer: 'Submit offer'
+      list_offers: 'List of offers'
+
+    show:
+      title_page: "%{title_offer}"
+      offer_section: 'Offer'
+      number_offer: 'Offer #'
+      seller_offer: 'Seller: '
+      title_offer: 'Title: '
+      description_offer: 'Description: '
+      price_offer: 'Price: '
+      state_offer: 'State: '
+      validate_offer: 'Validate offer'
+      comments_section: 'Comments section'
       number_comment: 'Comment #'
       author_comment: 'Author: '
       content_comment: 'Content: '
-      post_comment: Post a comment
-      submit_comment: Submit comment
-      list_offers: List of offers
+      post_comment: 'Post a comment'
+      submit_comment: 'Submit comment'
+      list_offers: 'List of offers'
 
     comments:
       create:
-        success_comment: Comment has been published!
-        error_comment: Content's comment can't be blank.
+        success_comment: 'Comment has been published!'
+        error_comment: "Content's comment can't be blank."

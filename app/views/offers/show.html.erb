@@ -3,43 +3,50 @@
 <% end %>
 
 <div class="card">
-    <div class="card-header font-weight-bold">
-      <%= t('.number_offer') %><%= @offer.id.to_s %> - <%= @offer.title %>
-    </div>
-    <div class="card-body">
-      <p class="card-text">
-        <span class="font-weight-bold"><%= t('.description_offer') %></span>
-        <%= simple_format(@offer.content) %></p>
-    </div>
-    <div class="card-footer">
-      <div class="d-flex flex-wrap justify-content-around">
-        <div class="p2">
-          <span class="font-weight-bold"><%= t('.seller_offer') %></span>
-          <%= @offer.user.name %>
-        </div>
-        <div class="p2">
-          <span class="font-weight-bold"><%= t('.price_offer') %></span>
-          <%= @offer.price.to_s %>
-        </div>
+  <div class="card-header font-weight-bold text-center h1">
+    <%= t('.offer_section') %>
+  </div>
+  <div class="card-header font-weight-bold">
+    <%= t('.number_offer') %><%= @offer.id.to_s %> - <%= @offer.title %>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      <span class="font-weight-bold"><%= t('.description_offer') %></span>
+      <%= simple_format(@offer.content) %></p>
+  </div>
+  <div class="card-footer">
+    <div class="d-flex flex-wrap justify-content-around">
+      <div class="p2">
+        <span class="font-weight-bold"><%= t('.seller_offer') %></span>
+        <%= @offer.user.name %>
+      </div>
+      <div class="p2">
+        <span class="font-weight-bold"><%= t('.price_offer') %></span>
+        <%= @offer.price.to_s %>
       </div>
     </div>
-    <% if current_user.role == "admin" %>
-      <div class="card-footer text-center">
-        <span class="font-weight-bold"><%= t('.state_offer') %></span>
-        <%= @offer.state %>
-        <% if @offer.state == "waiting" %>
-          <%= form_tag offer_path, method: :patch do %>
-            <input type="submit" value= <%= t('.validate_offer') %> class="btn btn-warning" />
-          <% end %>
+  </div>
+  <% if current_user.role == "admin" %>
+    <div class="card-footer text-center">
+      <span class="font-weight-bold"><%= t('.state_offer') %></span>
+      <%= @offer.state %>
+      <% if @offer.state == "waiting" %>
+        <%= form_tag offer_path, method: :patch do %>
+          <input type="submit" value= <%= t('.validate_offer') %> class="btn btn-warning" />
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
-<h1><%= t('.comments_section') %></h1>
 <ul class="list-group">
+  <li class="list-group-item list-group-item-secondary">
+    <div class="font-weight-bold text-center h1">
+      <%= t('.comments_section') %>
+    </div>
+  </li>
   <% @comments.where(offer_id: @offer.id).each_with_index do |comment, index| %>
-    <li class="list-group-item">
+    <li class="list-group-item list-group-item-secondary">
       <div class="d-flex flex-wrap justify-content-around">
         <div class="p2">
           <span class="font-weight-bold"><%= t('.number_comment') %><%= index + 1 %></span>

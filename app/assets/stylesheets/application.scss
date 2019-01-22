@@ -22,3 +22,13 @@
 .list-group-item:focus, .list-group-item:hover {
     z-index: 0;
 }
+
+
+.card > a, .card > a:hover, .card > a:visited {
+ 	color: currentColor;
+ 	text-decoration: none;
+}
+
+.card > a:hover {
+	border: solid 1px black;
+}

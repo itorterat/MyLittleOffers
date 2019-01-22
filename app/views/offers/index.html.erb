@@ -2,17 +2,50 @@
   <%= t('.title_page') %>
 <% end %>
 
-<h1><%= t('.list_offers') %></h1>
-<% if Offer.all.where(state: "published").empty? and current_user.try(:role) != "admin" %>
-  <p><%= t('.no_offer') %></p>
-<% else %>
-  <% @offers.each do |offer| %>
-    <% if offer.state == "published" or current_user.try(:role) == "admin" %>
-      <div>
-        <a href= "/offers/<%= offer.id.to_s %>"><%= t('.number_offer') %><%= offer.id.to_s %></a><br><br>
-        <%= t('.title_offer') %> <%= offer.title %><br><br>
-        <%= t('.state_offer') %> <%= offer.state %><br><br>
-      </div> <br>
+<div class="card">
+  <div class="card-header font-weight-bold text-center h1">
+    <%= t('.list_offers') %>
+  </div>
+  <% if Offer.all.where(state: "published").empty? and current_user.try(:role) != "admin" %>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">
+          <%= t('.no_offer') %>
+        </p>
+      </div>
+    </div>
+  <% else %>
+    <% @offers.each do |offer| %>
+      <div class="card">
+      <%= link_to offer_path(offer.id.to_s) do %>
+        <div class="card-header font-weight-bold">
+          <%= t('.number_offer') %><%= offer.id.to_s %> - <%= offer.title %>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <span class="font-weight-bold"><%= t('.description_offer') %></span>
+            <%= simple_format(offer.content) %></p>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex flex-wrap justify-content-around">
+            <div class="p2">
+              <span class="font-weight-bold"><%= t('.seller_offer') %></span>
+              <%= offer.user.name %>
+            </div>
+            <div class="p2">
+              <span class="font-weight-bold"><%= t('.price_offer') %></span>
+              <%= offer.price.to_s %>
+            </div>
+          </div>
+        </div>
+        <% if current_user.role == "admin" %>
+          <div class="card-footer text-center">
+            <span class="font-weight-bold"><%= t('.state_offer') %></span>
+            <%= offer.state %>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
     <% end %>
+  </div>
   <% end %>
-<% end %>

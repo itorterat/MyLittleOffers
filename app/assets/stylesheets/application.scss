@@ -41,12 +41,16 @@
 	padding: 0;
 }
 
-.new_comment {
+textarea[id="comment_content"] {
 	height: 100%;
 	width: 100%;
 }
 
-textarea {
+.form-offer {
+	padding: 0;
+}
+
+input[id="offer_title"], textarea[id="offer_content"], input[id="offer_price"] {
 	height: 100%;
 	width: 100%;
 }

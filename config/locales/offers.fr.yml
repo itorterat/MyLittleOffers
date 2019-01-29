@@ -1,34 +1,41 @@
 fr:
+  logout: 'Se déconnecter'
+  error_title_offer: "Le titre de l'annonce ne peut pas être vide !"
+  error_content_offer: "La description de l'annonce ne peut pas être vide !"
+  error_price_offer: "Le prix de l'annonce ne peut pas être vide !"
   layouts:
     application:
-      list_offers: Liste des annonces
-      post_offer: Publier une annonce
-      edit_profile: Editer profil
-      logout: Se déconnecter
-      signup: S'enregistrer
-      login: Se connecter
+      list_offers: 'Liste des annonces'
+      post_offer: 'Publier une annonce'
+      edit_profile: 'Editer profil'
+      signup: "S'enregistrer"
+      login: 'Se connecter'
 
   offers:
     create:
-      success_offer: L'annonce a été soumise !
-      error_offer: L'annonce n'a pas été soumise !
+      success_offer: "L'annonce a été soumise !"
+      error_offer: "L'annonce n'a pas été soumise !"
 
     index:
-      title_page: Liste des annonces
-      list_offers: Liste des annonces
-      no_offer: Pas d'annonce disponible pour le moment ...
+      title_page: 'Liste des annonces'
+      list_offers: 'Liste des annonces'
+      no_offer: "Pas d'annonce disponible pour le moment ..."
       number_offer: 'Annonce #'
+      seller_offer: 'Vendeur : '
       title_offer: 'Titre : '
+      description_offer: 'Description : '
+      price_offer: 'Prix : '
       state_offer: 'Statut : '
 
     new:
-      title_page: Publier une annonce
-      post_offer: Publier une annonce
+      title_page: 'Publier une annonce'
+      error_offer: "L'annonce n'a pas été soumise !"
+      post_offer: 'Publier une annonce'
       title_offer: 'Titre : '
       description_offer: 'Description : '
       price_offer: 'Prix : '
       submit_offer: Soumettre l'annonce
-      list_offers: Liste des annonces
+      list_offers: 'Liste des annonces'
 
     show:
       title_page: "%{title_offer}"
@@ -39,17 +46,17 @@ fr:
       description_offer: 'Description : '
       price_offer: 'Prix : '
       state_offer: 'Statut : '
-      validate_offer: Valider l'annonce
-      comments_section: Espace commentaire
+      validate_offer: "Valider l'annonce"
+      comments_section: 'Espace commentaire'
       number_comment: 'Commentaire #'
       author_comment: 'Auteur : '
       content_comment: 'Contenu : '
-      post_comment: Poster un commentaire
-      submit_comment: Publier le commentaire
-      list_offers: Liste des annonces
+      post_comment: 'Poster un commentaire'
+      submit_comment: 'Publier le commentaire'
+      list_offers: 'Liste des annonces'
       no_comment: 'Pas de commentaire à afficher pour le moment...'
 
     comments:
       create:
-        success_comment: Le commentaire a été posté !
-        error_comment: Le contenu du commentaire ne peut pas être vide.
+        success_comment: 'Le commentaire a été posté !'
+        error_comment: 'Le contenu du commentaire ne peut pas être vide.'

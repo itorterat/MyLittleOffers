@@ -1,5 +1,8 @@
 en:
   logout: 'Logout'
+  error_title_offer: "Title's offer can't be blank!"
+  error_content_offer: "Content's offer can't be blank!"
+  error_price_offer: "Price's offer can't be blank!"
   layouts:
     application:
       list_offers: 'List of offers'
@@ -26,6 +29,7 @@ en:
 
     new:
       title_page: 'Post an offer'
+      error_offer: 'Offer has not been submitted!'
       post_offer: 'Post an offer'
       title_offer: 'Title: '
       description_offer: 'Description: '

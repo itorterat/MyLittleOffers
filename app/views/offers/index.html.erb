@@ -20,6 +20,9 @@
       <%= link_to offer_path(offer.id.to_s) do %>
         <div class="card-header font-weight-bold">
           <%= t('.number_offer') %><%= offer.id.to_s %> - <%= offer.title %>
+          <% if current_user == offer.user %>
+            <i class='float-right material-icons'>star</i>
+          <% end %>
         </div>
         <div class="card-body">
           <p class="card-text">

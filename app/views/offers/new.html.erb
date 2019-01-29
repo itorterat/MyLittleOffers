@@ -2,31 +2,56 @@
   <%= t('.title_page') %>
 <% end %>
 
-<h1>Post an offer</h1>
-
-<%= form_for @offer do |f| %>
-  <div class="field">
-    <%= f.label :title, t('.title_offer') %><br />
-    <%= f.text_field :title %>
-    <%= @offer.errors[:title].first %><br /><br />
-  </div>
-
-  <div class="field">
-    <%= f.label :content, t('.description_offer') %><br />
-    <%= f.text_area :content, :cols => "40", :rows => "5" %>
-    <%= @offer.errors[:content].first %><br /><br />
-  </div>
-  <div class="field">
-    <%= f.label :price, t('.price_offer') %><br />
-    <%= f.number_field :price %>
-    <%= @offer.errors[:price].first %><br /><br />
-  </div>
-  <div class="actions">
-    <%= f.submit t('.submit_offer') %>
+<% if @offer.errors.any? %>
+  <div class="alert alert-danger">
+    <%= t('.error_offer') %>
   </div>
 <% end %>
 
-
-<br /><br />
+<ul class="list-group">
+  <li class="list-group-item list-group-item-secondary">
+    <div class="font-weight-bold text-center h1">
+      <%= t('.post_offer') %>
+    </div>
+  </li>
+  <%= form_for @offer do |f| %>
+  <li class="list-group-item list-group-item-secondary font-weight-bold">
+    <%= t('.title_offer') %>
+  </li>
+  <li class="list-group-item form-offer">
+    <%= f.text_field :title, class: 'd-flex' %>
+    <% if @offer.errors[:title].any? %>
+    <div class="alert alert-danger">
+      <%= @offer.errors[:title].first %>
+    </div>
+    <% end %>
+  </li>
+  <li class="list-group-item list-group-item-secondary font-weight-bold">
+    <%= t('.description_offer') %>
+  </li>
+  <li class="list-group-item form-offer">
+    <%= f.text_area :content, class: 'd-flex' %>
+    <% if @offer.errors[:content].any? %>
+    <div class="alert alert-danger">
+      <%= @offer.errors[:content].first %>
+    </div>
+    <% end %>
+  </li>
+  <li class="list-group-item list-group-item-secondary font-weight-bold">
+    <%= t('.price_offer') %>
+  </li>
+  <li class="list-group-item form-offer">
+    <%= f.number_field :price, class: 'd-flex' %>
+    <% if @offer.errors[:price].any? %>
+    <div class="alert alert-danger">
+      <%= @offer.errors[:price].first %>
+    </div>
+    <% end %>
+  </li>
+  <li class="list-group-item list-group-item-secondary text-center">
+    <%= f.submit t('.submit_offer'), class: 'btn btn-success' %>
+  </li>
+  <% end %>
+</ul>
 
 <%= link_to t('.list_offers'), offers_path %>

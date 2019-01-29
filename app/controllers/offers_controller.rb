@@ -16,7 +16,7 @@ class OffersController < ApplicationController
     if @offer.save
       redirect_to offers_path, notice: t('.success_offer')
     else
-      redirect_to offers_path, alert: t('.error_offer')
+      render :new
     end
   end
 

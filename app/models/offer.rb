@@ -3,14 +3,14 @@ class Offer < ApplicationRecord
   has_many :comments
 
   validates :title, presence: {
-    message: "Le titre doit être renseigné."
+    message: I18n.t('.error_title_offer')
   }
 
   validates :content, presence: {
-    message: "La description doit être renseignée."
+    message: I18n.t('.error_content_offer')
   }
 
   validates :price, presence: {
-    message: "Le prix doit être renseigné."
+    message: I18n.t('.error_price_offer')
   }
 end

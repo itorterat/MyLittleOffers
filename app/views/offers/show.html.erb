@@ -32,19 +32,27 @@
       <%= @offer.state %>
       <% if @offer.state == "waiting" %>
         <%= form_tag offer_path, method: :patch do %>
-          <input type="submit" value= <%= t('.validate_offer') %> class="btn btn-warning" />
+          <input type="submit" value= <%= t('.validate_offer') %> class="btn btn-success" />
         <% end %>
       <% end %>
     </div>
   <% end %>
 </div>
 
+<% if @offer.state == "published" %>
 <ul class="list-group">
   <li class="list-group-item list-group-item-secondary">
     <div class="font-weight-bold text-center h1">
       <%= t('.comments_section') %>
     </div>
   </li>
+  <% if Comment.where(offer_id: @offer.id).empty? %>
+  <li class="list-group-item">
+    <div class="p2">
+      <%= t('.no_comment') %>
+    </div>
+  </li>
+  <% end %>
   <% @comments.where(offer_id: @offer.id).each_with_index do |comment, index| %>
     <li class="list-group-item list-group-item-secondary">
       <div class="d-flex flex-wrap justify-content-around">
@@ -66,18 +74,23 @@
   <% end %>
 </ul>
 
-<h1><%= t('.post_comment') %></h1>
-
-<%= form_for @comment, url: offer_comments_path(offer_id: @offer.id) do |f| %>
-  <div class="field">
-    <%= f.label :content, t('.content_comment') %><br />
-    <%= f.text_area :content, :cols => "40", :rows => "5" %>
-    <%= @comment.errors[:content].first %><br /><br />
+<div class="card">
+  <div class="card-header font-weight-bold text-center h1">
+    <%= t('.post_comment') %>
   </div>
-  <div class="actions">
-    <%= f.submit t('.submit_comment') %>
+  <div class="card-header font-weight-bold">
+    <%= t('.content_comment') %>
   </div>
+  <div class="card-body form-comment">
+    <%= form_for @comment, url: offer_comments_path(offer_id: @offer.id) do |f| %>
+      <%= f.text_area :content, class: 'd-flex' %>
+      <%= @comment.errors[:content].first %>
+  </div>
+  <div class="card-footer text-center">
+      <%= f.submit t('.submit_comment'), class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
 <% end %>
-<br /><br />
 
 <%= link_to t('.list_offers'), offers_path %>

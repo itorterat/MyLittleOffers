@@ -50,6 +50,7 @@ en:
       post_comment: 'Post a comment'
       submit_comment: 'Submit comment'
       list_offers: 'List of offers'
+      no_comment: 'No comment to show at this moment...'
 
     comments:
       create:

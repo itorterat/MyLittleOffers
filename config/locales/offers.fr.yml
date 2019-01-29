@@ -47,6 +47,7 @@ fr:
       post_comment: Poster un commentaire
       submit_comment: Publier le commentaire
       list_offers: Liste des annonces
+      no_comment: 'Pas de commentaire à afficher pour le moment...'
 
     comments:
       create:

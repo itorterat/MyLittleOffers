@@ -23,6 +23,10 @@
   z-index: 0;
 }
 
+.h1 {
+  color: #212529;
+}
+
 .card > a, .card > a:hover, .card > a:visited {
   color: currentColor;
   text-decoration: none;
@@ -30,4 +34,18 @@
 
 .card > a:hover {
   border: solid 1px black;
+}
+
+.form-comment {
+  padding: 0;
+}
+
+.new_comment {
+  height: 100%;
+  width: 100%;
+}
+
+textarea {
+  height: 100%;
+  width: 100%;
 }

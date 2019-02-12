@@ -16,8 +16,8 @@
     </div>
   <% else %>
     <% @offers.each do |offer| %>
-      <div class="card">
-      <%= link_to offer_path(offer.id.to_s) do %>
+      <div class="card <%= (current_user.role == "basic" and offer.state != "published") ? "hidden" : "" %>">
+      <%= link_to offer_path(offer.id) do %>
         <div class="card-header font-weight-bold">
           <%= t('.number_offer') %><%= offer.id.to_s %> - <%= offer.title %>
           <% if current_user == offer.user %>

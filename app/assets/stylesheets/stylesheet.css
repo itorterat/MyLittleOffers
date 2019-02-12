@@ -53,3 +53,7 @@ input[id="offer_title"], textarea[id="offer_content"], input[id="offer_price"] {
   height: 100%;
   width: 100%;
 }
+
+.hidden {
+  display: none;
+}

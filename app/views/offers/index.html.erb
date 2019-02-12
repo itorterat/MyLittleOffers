@@ -24,11 +24,13 @@
             <i class='float-right material-icons'>star</i>
           <% end %>
         </div>
-        <div class="card-body">
-          <p class="card-text">
-            <span class="font-weight-bold"><%= t('.description_offer') %></span>
-            <%= simple_format(offer.content) %></p>
-        </div>
+        <%if current_user.role == "admin" %>
+          <div class="card-body">
+            <p class="card-text">
+              <span class="font-weight-bold"><%= t('.description_offer') %></span>
+              <%= simple_format(offer.content) %></p>
+          </div>
+        <% end %>
         <div class="card-footer">
           <div class="d-flex flex-wrap justify-content-around">
             <div class="p2">
